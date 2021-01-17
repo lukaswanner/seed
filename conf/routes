@@ -32,6 +32,19 @@ POST        /password/change                 controllers.ChangePasswordControlle
 GET         /account/email/:email            controllers.ActivateAccountController.send(email: String)
 GET         /account/activate/:token         controllers.ActivateAccountController.activate(token: java.util.UUID)
 
+
+GET     /scrabble/new               controllers.HomeController.newGrid
+GET     /scrabble/submit            controllers.HomeController.submit
+GET     /scrabble/set/:x/:y/:index  controllers.HomeController.setCard(x:Int,y:Int,index:Int)
+GET     /scrabble/switch/:name      controllers.HomeController.switchCards(name)
+GET     /scrabble/undo              controllers.HomeController.undo
+GET     /scrabble/redo              controllers.HomeController.redo
+GET     /scrabble/resize/:size      controllers.HomeController.resize(size:Int)
+
+GET     /json                       controllers.HomeController.gridToJson
+GET     /websocket                  controllers.HomeController.socket
+
+
 # Map static resources from the /public folder to the /assets URL path
 GET         /assets/*file                    controllers.Assets.versioned(file)
 ->          /webjars                         webjars.Routes
