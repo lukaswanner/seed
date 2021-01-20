@@ -6,6 +6,11 @@ name := "play-silhouette-seed"
 
 version := "6.0.0"
 
+herokuAppName in Compile := "warm-island-02209"
+herokuProcessTypes in Compile := Map(
+  "web" -> "target/universal/stage/bin/warm-island-02209 -Dhttp.port=$PORT"
+)
+
 scalaVersion := "2.13.1"
 
 resolvers += Resolver.jcenterRepo
