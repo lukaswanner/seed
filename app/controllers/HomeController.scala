@@ -95,6 +95,7 @@ class HomeController @Inject() (cc: ControllerComponents)(implicit system: Actor
     }
 
     reactions += {
+
       case event: GameFieldChanged => sendJsonToClient(event)
       case event: CardsChanged => sendJsonToClient(event)
       case event: InvalidEquation => sendJsonToClient(event)
