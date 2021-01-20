@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/play-silhouette-seed
+web: target/universal/stage/bin/play-silhouette-seed -Dhttp.port=$PORT $PLAY_OPTS
